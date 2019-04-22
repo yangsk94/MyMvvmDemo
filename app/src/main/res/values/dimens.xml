@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="common_title_height">@dimen/dp44v</dimen>
+
+    <dimen name="common_tab_height">@dimen/dp48v</dimen>
+
+    <dimen name="common_model_height">@dimen/dp56v</dimen>
+
+
+    <dimen name="common_margin_16">@dimen/dp16</dimen>
+
+    <dimen name="common_text_size_13">@dimen/sp13</dimen>
+
+    <dimen name="common_text_size_12">@dimen/sp12</dimen>
+
+
+    <!--refresh widget dimens-->
+    <dimen name="ptr_icon_size">25dp</dimen>
+    <dimen name="ptr_icon_spacing">16dp</dimen>
+
+    <!--label dimens-->
+
+    <!-- red budge -->
+
+
+</resources>

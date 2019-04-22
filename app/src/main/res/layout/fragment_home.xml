@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data >
+        <import type="android.view.View"/>
+        <variable
+                name="vm"
+                type="com.wram.myframeworkdemo.home.ViewModel"/>
+    </data>
+
+
+    <LinearLayout
+            android:gravity="bottom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <TextView
+                android:id="@+id/textView"
+                android:text="@{vm.data}"
+                android:textSize="@dimen/sp20"
+                android:textColor="@color/red"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+</layout>

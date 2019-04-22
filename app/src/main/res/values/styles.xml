@@ -1,0 +1,27 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!--App theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- Customize your theme here. -->
+        <item name="android:windowBackground">@color/c_f2f5f7</item>
+        <!--<item name="android:fitsSystemWindows">true</item>-->
+    </style>
+
+    <!--主tab文字样式-->
+    <style name="Home_Tab_Text_Style">
+        <item name="android:layout_gravity">bottom|center_horizontal</item>
+        <item name="android:textColor">@drawable/selector_home_tab_text_color</item>
+        <item name="android:textSize">@dimen/sp10</item>
+    </style>
+
+
+</resources>

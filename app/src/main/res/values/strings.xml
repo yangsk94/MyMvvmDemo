@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MVVM框架</string>
+
+    <string name="home_1">TAB1</string>
+    <string name="home_2">TAB2</string>
+    <string name="home_3">我的</string>
+    <string name="home_4">TAB4</string>
+
+    <string name="common_tips_01">再按一次退出程序</string>
+
+</resources>

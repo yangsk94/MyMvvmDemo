@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/dp10"
+    android:paddingRight="@dimen/dp10">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/shape_dialog_radius_white_14dp"
+        android:clickable="false"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/dp10v"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/common_dialog_title_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp10"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textColor="#000000"
+            android:textSize="@dimen/sp16"
+            android:textStyle="bold"
+            tools:text="标题" />
+
+        <View
+            android:id="@+id/common_dialog_title_line"
+            style="@style/meHorizontalSeparator"
+            android:layout_marginTop="@dimen/dp10" />
+
+        <TextView
+            android:id="@+id/common_dialog_content_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp15"
+            android:layout_marginRight="@dimen/dp15"
+            android:layout_marginTop="@dimen/dp15v"
+            android:gravity="center"
+            android:padding="@dimen/dp10"
+            android:textColor="#000000"
+            android:textIsSelectable="true"
+            android:textSize="@dimen/sp15"
+            android:textStyle="bold"
+            tools:text="内容" />
+
+        <View
+            style="@style/meHorizontalSeparator"
+            android:layout_marginTop="@dimen/dp32" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp44v"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/dp10"
+            android:layout_marginRight="@dimen/dp10"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/common_dialog_ok_button"
+                style="@style/dialog_btn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp10"
+                android:layout_marginRight="@dimen/dp5"
+                android:layout_marginTop="@dimen/dp5v"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:visibility="gone"
+                tools:text="确定"
+                tools:visibility="visible" />
+
+
+            <View
+                android:id="@+id/common_dialog_separate_line"
+                style="@style/meHorizontalSeparator"
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/common_dialog_no_button"
+                style="@style/dialog_btn"
+                android:layout_marginLeft="@dimen/dp5"
+                android:layout_marginRight="@dimen/dp10"
+                android:layout_marginTop="@dimen/dp5v"
+                android:background="@color/white"
+                android:textStyle="normal"
+                android:visibility="gone"
+                tools:text="取消"
+                tools:visibility="visible" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>

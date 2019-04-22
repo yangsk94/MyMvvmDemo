@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--loading-->
+    <declare-styleable name="LoadingView">
+        <attr name="z_type">
+            <enum name="RotateCircleBuilder" value="11" />
+        </attr>
+        <attr name="z_color" format="color" />
+        <attr name="z_duration_percent" format="float" />
+    </declare-styleable>
+    <declare-styleable name="LoadingTextView">
+        <attr name="z_text" format="string" />
+    </declare-styleable>
+
+
+</resources>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/z_loading"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/dialog_background"
+    android:gravity="center"
+    android:minWidth="@dimen/dp200"
+    android:orientation="vertical"
+    android:padding="@dimen/dp10">
+
+    <com.widget.loading.LoadingView
+        android:id="@+id/z_loading_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp15"
+        android:layout_marginTop="@dimen/dp15v"
+        android:contentDescription="@string/app_name"
+        android:scaleType="fitCenter" />
+
+    <com.widget.loading.LoadingTextView
+        android:id="@+id/z_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/z_custom_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lines="1"
+        android:paddingBottom="@dimen/dp10v"
+        android:paddingTop="@dimen/dp5v"
+        android:visibility="gone" />
+
+</LinearLayout>

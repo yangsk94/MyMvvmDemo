@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">base_library</string>
+    <string name="error_null_text">网络超时，请稍后重试</string>
+    <string name="error">对不起，出错了！！！</string>
+</resources>

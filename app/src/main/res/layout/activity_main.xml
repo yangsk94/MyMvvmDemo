@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <FrameLayout
+                android:id="@+id/home_main_container"
+                android:layout_width="match_parent"
+                app:layout_constraintBottom_toTopOf="@+id/home_tab_container"
+                android:layout_height="0dp"/>
+
+
+        <RadioGroup
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:id="@+id/home_tab_container"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/common_tab_height"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+            <RadioButton
+                    android:id="@+id/home_tab_one"
+                    style="@style/Home_Tab_Text_Style"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/dp7v"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:onClick="onClick"
+                    android:drawableTop="@drawable/home_tab_release_icon_selector"
+                    android:gravity="center"
+                    android:text="@string/home_1"/>
+
+            <RadioButton
+                    android:id="@+id/home_tab_two"
+                    style="@style/Home_Tab_Text_Style"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/dp7v"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:onClick="onClick"
+                    android:drawableTop="@drawable/home_tab_manage_icon_selector"
+                    android:gravity="center"
+                    android:text="@string/home_2"/>
+
+            <RadioButton
+                    android:id="@+id/home_tab_three"
+                    style="@style/Home_Tab_Text_Style"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/dp7v"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:onClick="onClick"
+                    android:drawableTop="@drawable/home_tab_me_icon_selector"
+                    android:gravity="center"
+                    android:text="@string/home_3"/>
+
+        </RadioGroup>
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>
+

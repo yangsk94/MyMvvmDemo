@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- sw320dp -->
+<resources>
+
+    <!-- dp -->
+    <dimen name="dp1">0.89dp</dimen>
+    <dimen name="dp2">1.78dp</dimen>
+    <dimen name="dp3">2.67dp</dimen>
+    <dimen name="dp4">3.56dp</dimen>
+    <dimen name="dp5">4.45dp</dimen>
+    <dimen name="dp6">5.34dp</dimen>
+    <dimen name="dp7">6.23dp</dimen>
+    <dimen name="dp8">7.12dp</dimen>
+    <dimen name="dp9">8.01dp</dimen>
+    <dimen name="dp10">8.9dp</dimen>
+    <dimen name="dp11">9.79dp</dimen>
+    <dimen name="dp12">10.68dp</dimen>
+    <dimen name="dp13">11.57dp</dimen>
+    <dimen name="dp14">12.46dp</dimen>
+    <dimen name="dp15">13.35dp</dimen>
+    <dimen name="dp16">14.24dp</dimen>
+    <dimen name="dp18">16.02dp</dimen>
+    <dimen name="dp19">16.91dp</dimen>
+    <dimen name="dp20">17.8dp</dimen>
+    <dimen name="dp22">19.58dp</dimen>
+    <dimen name="dp23">20.47dp</dimen>
+    <dimen name="dp24">21.36dp</dimen>
+    <dimen name="dp25">22.25dp</dimen>
+    <dimen name="dp27">24.029999dp</dimen>
+    <dimen name="dp28">24.92dp</dimen>
+    <dimen name="dp30">26.699999dp</dimen>
+    <dimen name="dp32">28.48dp</dimen>
+    <dimen name="dp35">31.15dp</dimen>
+    <dimen name="dp36">32.04dp</dimen>
+    <dimen name="dp40">35.6dp</dimen>
+    <dimen name="dp42">37.38dp</dimen>
+    <dimen name="dp44">39.16dp</dimen>
+    <dimen name="dp48">42.72dp</dimen>
+    <dimen name="dp50">44.5dp</dimen>
+    <dimen name="dp51">45.39dp</dimen>
+    <dimen name="dp54">48.059998dp</dimen>
+    <dimen name="dp56">49.84dp</dimen>
+    <dimen name="dp62">55.18dp</dimen>
+    <dimen name="dp76">67.64dp</dimen>
+    <dimen name="dp80">71.2dp</dimen>
+    <dimen name="dp84">74.76dp</dimen>
+    <dimen name="dp86">76.54dp</dimen>
+    <dimen name="dp90">80.1dp</dimen>
+    <dimen name="dp104">92.56dp</dimen>
+    <dimen name="dp105">93.45dp</dimen>
+    <dimen name="dp120">106.80dp</dimen>
+    <dimen name="dp130">115.7dp</dimen>
+    <dimen name="dp140">124.6dp</dimen>
+    <dimen name="dp152">135.28dp</dimen>
+    <dimen name="dp200">178dp</dimen>
+    <dimen name="dp280">248.89dp</dimen>
+    <dimen name="dp360">320.4dp</dimen>
+
+    <!-- sp -->
+    <dimen name="sp10">8sp</dimen>
+    <dimen name="sp12">10.67sp</dimen>
+    <dimen name="sp13">11.56sp</dimen>
+    <dimen name="sp14">12.44sp</dimen>
+    <dimen name="sp15">13.33sp</dimen>
+    <dimen name="sp16">14.22sp</dimen>
+    <dimen name="sp17">15.11sp</dimen>
+    <dimen name="sp18">16sp</dimen>
+    <dimen name="sp19">16.89sp</dimen>
+    <dimen name="sp20">17.78sp</dimen>
+    <dimen name="sp24">21.33sp</dimen>
+    <dimen name="sp28">24.89sp</dimen>
+
+</resources>
