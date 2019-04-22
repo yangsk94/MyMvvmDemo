@@ -2,7 +2,6 @@ package com.wram.myframeworkdemo.content
 
 import android.annotation.SuppressLint
 import com.base.BaseCommonFragment
-import com.event.RxBus
 import com.wram.myframeworkdemo.R
 import com.wram.myframeworkdemo.databinding.FragmentContentBinding
 import io.reactivex.Observable
@@ -20,7 +19,7 @@ class ContentFragment : BaseCommonFragment<FragmentContentBinding, ContentVM>() 
 
     @SuppressLint("CheckResult")
     override fun initGlobalParams() {
-        addOb = RxBus.get().register("abc", String::class.java)
+        addOb = RxBus.get().register("abc")
         addOb?.observeOn(AndroidSchedulers.mainThread())
             ?.subscribe { s ->
                 mBinding?.textView?.text = s
