@@ -98,5 +98,14 @@ dependencies {
     api rootProject.ext.rxlife_android
     api rootProject.ext.rxlife_components
     api rootProject.ext.rxbinding
+
+    debugApi rootProject.ext.leakcanary
+    debugApi rootProject.ext.leakcanary_fg
+    releaseApi rootProject.ext.leakcanary_no_op
+    testApi rootProject.ext.leakcanary_no_op
+
+    debugApi rootProject.ext.tinydancer
+    releaseApi rootProject.ext.tinydancer_noop
+    testApi rootProject.ext.tinydancer_noop
 }
 

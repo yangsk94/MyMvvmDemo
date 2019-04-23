@@ -2,6 +2,7 @@ package com.wram.myframeworkdemo.content
 
 import android.annotation.SuppressLint
 import com.base.BaseCommonFragment
+import com.event.RxBus
 import com.wram.myframeworkdemo.R
 import com.wram.myframeworkdemo.databinding.FragmentContentBinding
 import io.reactivex.Observable
@@ -24,6 +25,8 @@ class ContentFragment : BaseCommonFragment<FragmentContentBinding, ContentVM>() 
             ?.subscribe { s ->
                 mBinding?.textView?.text = s
             }
+
+        mBinding?.recyclerView?.setData()
 
     }
 

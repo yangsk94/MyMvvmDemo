@@ -18,7 +18,7 @@ abstract class BaseCommonFragment<B : ViewDataBinding, VM : BaseViewModel> : Pag
 
     var mBinding: B? = null
 
-     var mViewModel: VM? = null
+    var mViewModel: VM? = null
 
     protected abstract val layoutId: Int
 

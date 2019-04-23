@@ -1,6 +1,7 @@
 package com.wram.myframeworkdemo.test
 
 import com.base.BaseCommonFragment
+import com.event.RxBus
 import com.network.bean.UserInfo
 import com.wram.myframeworkdemo.R
 import com.wram.myframeworkdemo.databinding.FragmentTestBinding

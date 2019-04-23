@@ -75,6 +75,12 @@ ext {
     rxlife_components = 'com.trello.rxlifecycle2:rxlifecycle-components:2.2.1'
     rxbinding = 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
 
+    leakcanary = 'com.squareup.leakcanary:leakcanary-android:1.6.3'
+    leakcanary_no_op = 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.3'
+    leakcanary_fg = 'com.squareup.leakcanary:leakcanary-support-fragment:1.6.3'
+    tinydancer = 'com.github.brianPlummer:tinydancer:0.1.2'
+    tinydancer_noop = 'com.github.brianPlummer:tinydancer-noop:0.1.2'
+
 
 }
 

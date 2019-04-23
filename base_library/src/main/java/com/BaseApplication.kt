@@ -2,7 +2,9 @@ package com
 
 import android.app.Application
 import android.content.Context
+import com.codemonkeylabs.fpslibrary.TinyDancer
 import com.network.NetworkMonitor
+import com.squareup.leakcanary.LeakCanary
 import com.utils.ContextProvider
 import com.utils.Logger
 import com.utils.SystemUtil
@@ -51,6 +53,12 @@ class BaseApplication : Application() {
 
         // 网络模块
         NetworkMonitor.instance?.startMonitor(context)
+
+        // 性能检测模块
+        if (!LeakCanary.isInAnalyzerProcess(this) && isDebuggable) {
+            TinyDancer.create().show(this)
+            LeakCanary.install(this)
+        }
 
     }
 
