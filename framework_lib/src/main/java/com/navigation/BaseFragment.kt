@@ -4,11 +4,11 @@ import android.content.Context
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.support.v4.app.Fragment
 import android.text.TextUtils
 import android.view.View
 import android.widget.Toast
 import com.BaseApplication
-import com.trello.rxlifecycle2.components.support.RxFragment
 import com.utils.Logger
 import com.widgets.ToastCompat
 
@@ -17,7 +17,7 @@ import com.widgets.ToastCompat
  * Created by yangsk on 2017/5/21.
  */
 
-abstract class BaseFragment : RxFragment() {
+abstract class BaseFragment : Fragment() {
 
     var TAG = javaClass.simpleName
 

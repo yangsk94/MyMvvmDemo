@@ -94,9 +94,9 @@ dependencies {
     api rootProject.ext.rxadapter
     api rootProject.ext.rxjava
     api rootProject.ext.rxandroid
-    api rootProject.ext.rxlife
-    api rootProject.ext.rxlife_android
-    api rootProject.ext.rxlife_components
+//    api rootProject.ext.rxlife
+//    api rootProject.ext.rxlife_android
+//    api rootProject.ext.rxlife_components
     api rootProject.ext.rxbinding
 
     debugApi rootProject.ext.leakcanary
@@ -107,5 +107,6 @@ dependencies {
     debugApi rootProject.ext.tinydancer
     releaseApi rootProject.ext.tinydancer_noop
     testApi rootProject.ext.tinydancer_noop
+    api 'com.uber.autodispose:autodispose-android:1.2.0'
 }
 

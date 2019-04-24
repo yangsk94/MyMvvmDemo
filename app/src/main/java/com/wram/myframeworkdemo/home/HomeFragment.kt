@@ -7,25 +7,19 @@ import com.wram.myframeworkdemo.BR
 import com.wram.myframeworkdemo.R
 import com.wram.myframeworkdemo.databinding.FragmentHomeBinding
 import com.wram.myframeworkdemo.test.TestFrg
-import io.reactivex.ObservableTransformer
 
 /**
  * @author ysk
  * @class describe  [.]
  * @time 2019/4/20 下午2:58
  */
-class HomeFragment : BaseCommonFragment<FragmentHomeBinding, ViewModel>(),
-    ViewModel.Navigator {
+class HomeFragment : BaseCommonFragment<FragmentHomeBinding, ViewModel>(), ViewModel.Navigator {
     override fun getLayoutId(): Int {
         return R.layout.fragment_home
     }
 
     override fun getVariableId(): Int {
         return BR.vm
-    }
-
-    override fun <T> bindLifecycle(): ObservableTransformer<T, T> {
-        return bindToLifecycle()
     }
 
     override fun success(info: UserInfo?) {

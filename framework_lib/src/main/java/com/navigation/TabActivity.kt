@@ -8,7 +8,7 @@ import java.util.*
  * Created by yangsk on 2017/5/21.
  */
 
-abstract class TabActivity : CommonActivity() {
+abstract class TabActivity : BaseActivity() {
 
     private var mTabsInfo: MutableList<TabInfo>? = null
 

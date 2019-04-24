@@ -151,12 +151,8 @@ object Navigation {
         overridePendingTransition(activity, transitionStyle)
     }
 
-    private fun generateIntent(
-        activity: FragmentActivity,
-        fragment: String,
-        args: Bundle?,
-        transitionStyle: Int
-    ): Intent {
+    private fun generateIntent(activity: FragmentActivity, fragment: String, args: Bundle?, transitionStyle: Int)
+            : Intent {
         val intent = Intent(activity, ContainerActivity::class.java)
         if (null != args) {
             val value = fragment + FRAGMENT_ARGS

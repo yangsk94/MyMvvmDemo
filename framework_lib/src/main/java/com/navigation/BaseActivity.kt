@@ -3,8 +3,6 @@ package com.navigation
 import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.FragmentActivity
-import android.view.View
-import com.trello.rxlifecycle2.components.support.RxAppCompatActivity
 import com.utils.Logger
 import com.utils.ScreenUtils
 
@@ -12,7 +10,7 @@ import com.utils.ScreenUtils
  * Created by yangsk on 2017/5/21.
  */
 
-abstract class BaseActivity : RxAppCompatActivity() {
+abstract class BaseActivity : FragmentActivity() {
 
     open val TAG = javaClass.simpleName
 

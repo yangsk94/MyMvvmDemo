@@ -1,10 +1,13 @@
 package com.medtap.network.library.api
 
+import com.BaseApplication
 import com.manager.AccountManager
 import com.network.helper.HttpLogger
 import com.utils.DeviceUtil
+import com.utils.FileUtil
 import com.utils.SignUtil
 import com.wram.base_library.BuildConfig
+import okhttp3.Cache
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.Response
@@ -20,7 +23,10 @@ class InternalOkHttpClient {
             var okHttpClient: OkHttpClient? = null
 
             if (okHttpClient == null) {
+                val cacheFile = BaseApplication.context?.let { FileUtil.getPublicDir(it) }
+                val cache = Cache(cacheFile, (1024 * 1024 * 50).toLong())
                 okHttpClient = OkHttpClient.Builder()
+                    .cache(cache)
                     .retryOnConnectionFailure(true)
                     .connectTimeout(DEFAULT_TIME_OUT_SECONDS.toLong(), TimeUnit.SECONDS)
                     .readTimeout(DEFAULT_TIME_OUT_SECONDS.toLong(), TimeUnit.SECONDS)

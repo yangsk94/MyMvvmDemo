@@ -3,8 +3,8 @@ package com.base;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
 import android.os.Bundle;
+import com.navigation.BaseActivity;
 import com.navigation.BaseViewModel;
-import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 import com.widgets.ToastCompat;
 import org.jetbrains.annotations.Nullable;
 
@@ -13,7 +13,7 @@ import org.jetbrains.annotations.Nullable;
  * @class describe  {@link #}
  * @time 2019/4/23 下午4:50
  */
-public abstract class BaseCommonActivity<B extends ViewDataBinding, VM extends BaseViewModel> extends RxAppCompatActivity {
+public abstract class BaseCommonActivity<B extends ViewDataBinding, VM extends BaseViewModel> extends BaseActivity {
 
 
     private B mBinding;

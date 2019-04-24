@@ -29,7 +29,6 @@ class ToastCompat constructor(
         if (TextUtils.isEmpty(mText) || TextUtils.isDigitsOnly(mText) || (mText?.startsWith("-")!!)) {
             Logger.e(javaClass.simpleName, "text invalid !!!")
             mText = mContext.resources.getString(R.string.error_null_text)
-            //            return;
             // TODO: 30/09/2018 要求网络异常提示吐司
         }
         val toast = Toast.makeText(mContext, mText, mDuration)

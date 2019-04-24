@@ -1,7 +1,12 @@
 package com.navigation
 
+import android.arch.lifecycle.Lifecycle
 import android.content.Context
 import android.databinding.BaseObservable
+import com.lifecycle.AndroidLifecycleScopeProvider
+import com.uber.autodispose.AutoDispose
+import com.uber.autodispose.AutoDisposeConverter
+import com.utils.Logger
 
 abstract class BaseViewModel(context: Context) : BaseObservable() {
 
@@ -12,7 +17,18 @@ abstract class BaseViewModel(context: Context) : BaseObservable() {
     }
 
     fun onDestroy() {
+        Logger.e("currentState:" + mLifecycle?.getCurrentState()?.name)
+    }
 
+    var mLifecycle: Lifecycle? = null
+
+    fun setLifecycle(mLifecycle: Lifecycle) {
+        this.mLifecycle = mLifecycle
+        Logger.e("currentState:" + mLifecycle.currentState)
+    }
+
+    fun <T> bindLifecycle(): AutoDisposeConverter<T> {
+        return AutoDispose.autoDisposable(AndroidLifecycleScopeProvider.from(checkNotNull(mLifecycle)))
     }
 
 }

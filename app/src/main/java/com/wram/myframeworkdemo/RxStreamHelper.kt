@@ -20,9 +20,7 @@ class RxStreamHelper() {
     fun <T> mainThread(navigator: ViewModel.Navigator): ObservableTransformer<BaseEntity<T>, T> {
         return ObservableTransformer { upstream ->
             upstream
-                .compose(navigator.bindLifecycle())
-
-                .subscribeOn(Schedulers.io())
+                .subscribeOn(Schedulers.newThread())
                 //出错统一处理
                 .onErrorResumeNext(Function { throwable -> Observable.error(CustomException.handleException(throwable)) })
 
@@ -32,6 +30,7 @@ class RxStreamHelper() {
                     else Observable.error(tBaseModel.message?.let { ApiException(tBaseModel.code!!, it) })
                 }
                 .observeOn(AndroidSchedulers.mainThread())
+
         }
 
     }

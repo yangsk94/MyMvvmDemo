@@ -1,6 +1,5 @@
 package com.medtap.network.library.commen
 
-import android.util.Log
 import com.medtap.network.library.ObserverCallBack.BaseCallBack
 import com.utils.Logger
 import io.reactivex.Observer
@@ -35,13 +34,14 @@ class Destiny<T>(baseCallBack: BaseCallBack<T>) : Observer<T> {
     override fun onError(e: Throwable) {
         try {
             Logger.e(
-                "\n" + "http_error",
-                "error_msg:" + e.message
-                        + "\n"
+                "\n" + "http_error:"
+                        + "error_msg:"
+                        + e.message
+                        + ","
                         + "error_cause:"
                         + e.cause
             )
-            e.message?.let { baseCallBack?.failed(it) }
+            baseCallBack?.failed(e.toString())
         } catch (e: Exception) {
             if (Logger.DEBUG) {
                 Logger.e("http_error", e.toString())

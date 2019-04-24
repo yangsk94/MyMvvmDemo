@@ -3,9 +3,6 @@ package com.navigation
 import android.content.Intent
 import android.support.v4.app.FragmentActivity
 import android.view.KeyEvent
-import com.utils.TaskEngine
-
-import java.util.TimerTask
 
 
 /**

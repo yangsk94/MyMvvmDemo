@@ -8,13 +8,9 @@ import android.os.Environment
 import android.text.TextUtils
 import android.util.Base64
 import android.util.Log
-import com.utils.FileUtil.Companion.getPrsoftPublishDir
-
 import java.io.*
 import java.text.SimpleDateFormat
-import java.util.Calendar
-import java.util.Date
-import java.util.Enumeration
+import java.util.*
 import java.util.zip.ZipEntry
 import java.util.zip.ZipFile
 
@@ -481,7 +477,7 @@ class FileUtil {
          */
         fun getPublicDir(context: Context): File {
             // Get the directory for the app's private pictures directory.
-            val file = File(context.getExternalFilesDir(Environment.MEDIA_MOUNTED), "shuanghui")
+            val file = File(context.getExternalFilesDir(Environment.MEDIA_MOUNTED), "base")
             if (!file.exists()) {
                 if (!file.mkdirs()) {
                     Log.e("FileUtil", "prSoftPublish Directory not created")

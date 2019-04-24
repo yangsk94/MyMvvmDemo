@@ -6,7 +6,6 @@ import com.network.bean.UserInfo
 import com.wram.myframeworkdemo.R
 import com.wram.myframeworkdemo.databinding.FragmentTestBinding
 import com.wram.myframeworkdemo.home.ViewModel
-import io.reactivex.ObservableTransformer
 
 
 /**
@@ -15,9 +14,6 @@ import io.reactivex.ObservableTransformer
  * @time 2019/4/20 下午3:31
  */
 class TestFrg : BaseCommonFragment<FragmentTestBinding, ViewModel>(), ViewModel.Navigator {
-    override fun <T> bindLifecycle(): ObservableTransformer<T, T> {
-        return bindToLifecycle()
-    }
 
     override fun success(info: UserInfo?) {
 

@@ -1,5 +1,8 @@
 package com.constans
 
+import com.BaseApplication
+import java.io.File
+
 /**
  * @author yangsk
  * @class describe  [.]

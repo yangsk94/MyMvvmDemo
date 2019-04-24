@@ -13,7 +13,7 @@ import com.helper.NavigationHelper
  * Created by yangsk on 2017/5/21.
  */
 
-class ContainerActivity : CommonActivity(), Navigation.NavigationInterface {
+class ContainerActivity : BaseActivity(), Navigation.NavigationInterface {
 
     private var mCurrentFragment: Fragment? = null
 

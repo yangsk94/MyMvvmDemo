@@ -3,13 +3,11 @@ package com.base;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import com.navigation.BaseViewModel;
 import com.navigation.PageFragment;
-import com.trello.rxlifecycle2.LifecycleTransformer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -45,7 +43,10 @@ public abstract class BaseCommonFragment<B extends ViewDataBinding, VM extends B
     @Override
     public void onViewCreated(@NotNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        if (mViewModel != null) mViewModel.create();
+        if (mViewModel != null) {
+            mViewModel.create();
+            mViewModel.setLifecycle(getLifecycle());
+        }
         initGlobalParams();
     }
 
@@ -56,6 +57,7 @@ public abstract class BaseCommonFragment<B extends ViewDataBinding, VM extends B
     public void getIntentParams() {
 
     }
+
 
     protected abstract int getLayoutId();
 
