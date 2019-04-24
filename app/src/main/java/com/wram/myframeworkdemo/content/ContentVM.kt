@@ -1,6 +1,6 @@
 package com.wram.myframeworkdemo.content
 
-import com.navigation.BaseFragment
+import android.content.Context
 import com.navigation.BaseViewModel
 
 /**
@@ -8,4 +8,4 @@ import com.navigation.BaseViewModel
  * @class describe  [.]
  * @time 2019/4/22 上午10:35
  */
-class ContentVM(fragment: BaseFragment) : BaseViewModel(fragment)
+class ContentVM(context: Context) : BaseViewModel(context)

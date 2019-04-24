@@ -14,7 +14,9 @@ import io.reactivex.android.schedulers.AndroidSchedulers
  * @time 2019/4/20 下午2:59
  */
 class ContentFragment : BaseCommonFragment<FragmentContentBinding, ContentVM>() {
-    override fun createViewModel(): ContentVM? = ContentVM(this@ContentFragment)
+
+
+    override fun createViewModel(): ContentVM? = context?.let { ContentVM(it) }
 
     var addOb: Observable<String>? = null
 
@@ -30,12 +32,13 @@ class ContentFragment : BaseCommonFragment<FragmentContentBinding, ContentVM>() 
 
     }
 
+    override fun getLayoutId(): Int {
+        return R.layout.fragment_content
+    }
 
-    override val layoutId: Int
-        get() = R.layout.fragment_content
-
-    override val variableId: Int
-        get() = 0
+    override fun getVariableId(): Int {
+        return 0
+    }
 
     override fun onDestroy() {
         super.onDestroy()

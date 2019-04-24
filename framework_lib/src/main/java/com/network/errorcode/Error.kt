@@ -2,6 +2,7 @@ package com.medtap.network.library.errorcode
 
 class Error() {
     companion object {
+        val SUCCESS=0
         val UNAUTHORIZED = 401 //  未授权的请求
         val FORBIDDEN = 403//禁止访问
         val NOT_FOUND = 404//服务器地址未找到

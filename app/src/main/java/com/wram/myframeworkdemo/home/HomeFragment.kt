@@ -5,8 +5,9 @@ import com.navigation.Navigation
 import com.network.bean.UserInfo
 import com.wram.myframeworkdemo.BR
 import com.wram.myframeworkdemo.R
-import com.wram.myframeworkdemo.test.TestFrg
 import com.wram.myframeworkdemo.databinding.FragmentHomeBinding
+import com.wram.myframeworkdemo.test.TestFrg
+import io.reactivex.ObservableTransformer
 
 /**
  * @author ysk
@@ -15,6 +16,18 @@ import com.wram.myframeworkdemo.databinding.FragmentHomeBinding
  */
 class HomeFragment : BaseCommonFragment<FragmentHomeBinding, ViewModel>(),
     ViewModel.Navigator {
+    override fun getLayoutId(): Int {
+        return R.layout.fragment_home
+    }
+
+    override fun getVariableId(): Int {
+        return BR.vm
+    }
+
+    override fun <T> bindLifecycle(): ObservableTransformer<T, T> {
+        return bindToLifecycle()
+    }
+
     override fun success(info: UserInfo?) {
 
     }
@@ -32,13 +45,7 @@ class HomeFragment : BaseCommonFragment<FragmentHomeBinding, ViewModel>(),
 
     }
 
-    override val layoutId: Int
-        get() = R.layout.fragment_home
+    override fun createViewModel() = context?.let { ViewModel(it, this) }
 
-    override fun createViewModel() = ViewModel(this, this)
-
-
-    override val variableId: Int
-        get() = BR.vm
 
 }

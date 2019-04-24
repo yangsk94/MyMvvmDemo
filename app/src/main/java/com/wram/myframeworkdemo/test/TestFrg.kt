@@ -6,6 +6,7 @@ import com.network.bean.UserInfo
 import com.wram.myframeworkdemo.R
 import com.wram.myframeworkdemo.databinding.FragmentTestBinding
 import com.wram.myframeworkdemo.home.ViewModel
+import io.reactivex.ObservableTransformer
 
 
 /**
@@ -14,6 +15,10 @@ import com.wram.myframeworkdemo.home.ViewModel
  * @time 2019/4/20 下午3:31
  */
 class TestFrg : BaseCommonFragment<FragmentTestBinding, ViewModel>(), ViewModel.Navigator {
+    override fun <T> bindLifecycle(): ObservableTransformer<T, T> {
+        return bindToLifecycle()
+    }
+
     override fun success(info: UserInfo?) {
 
     }
@@ -22,7 +27,7 @@ class TestFrg : BaseCommonFragment<FragmentTestBinding, ViewModel>(), ViewModel.
         showToast(msg)
     }
 
-    override fun createViewModel(): ViewModel? = ViewModel(this@TestFrg, this)
+    override fun createViewModel(): ViewModel? = context?.let { ViewModel(it, this) }
 
     override fun initGlobalParams() {
         RxBus.get().post("abc", "RxBus")
@@ -31,12 +36,13 @@ class TestFrg : BaseCommonFragment<FragmentTestBinding, ViewModel>(), ViewModel.
         }
     }
 
-    override val layoutId: Int
-        get() = R.layout.fragment_test
+    override fun getLayoutId(): Int {
+        return R.layout.fragment_test
+    }
 
-
-    override val variableId: Int
-        get() = 0
+    override fun getVariableId(): Int {
+        return 0
+    }
 
 
 }

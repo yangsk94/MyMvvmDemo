@@ -61,5 +61,9 @@ class ToastCompat constructor(
         fun showToast(context: Context, text: CharSequence, duration: Int = Toast.LENGTH_SHORT) {
             ToastCompat.makeText(context, text.toString(), duration).show()
         }
+
+        fun showToast(context: Context, text: CharSequence) {
+            ToastCompat.makeText(context, text.toString(), Toast.LENGTH_SHORT).show()
+        }
     }
 }
