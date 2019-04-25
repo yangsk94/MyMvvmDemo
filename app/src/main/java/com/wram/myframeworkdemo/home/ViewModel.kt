@@ -2,21 +2,15 @@ package com.wram.myframeworkdemo.home
 
 import android.arch.lifecycle.MutableLiveData
 import android.content.Context
-import android.util.Log
 import com.medtap.network.library.IOTransFormHelper.RxStreamHelper
 import com.medtap.network.library.ObserverCallBack.BaseCallBack
 import com.medtap.network.library.api.ApiClient
 import com.medtap.network.library.commen.Destiny
 import com.navigation.BaseViewModel
+import com.network.bean.AreaBean
 import com.network.bean.LoginReqData
 import com.network.bean.UserInfo
 import com.widgets.ToastCompat
-import io.reactivex.Observable
-import io.reactivex.Observer
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.disposables.Disposable
-import io.reactivex.schedulers.Schedulers
-import java.util.concurrent.TimeUnit
 
 /**
  * @author
@@ -56,7 +50,7 @@ class ViewModel(context: Context, private val navigator: Navigator) : BaseViewMo
     var count: Int = 0
 
     fun getData() {
-        /* ApiClient.instance.getApiService().getAreaList()
+         ApiClient.instance.getApiService().getAreaList()
              .compose(RxStreamHelper().mainThread(navigator))
              .`as`(bindLifecycle())
              .subscribe(Destiny(object : BaseCallBack<AreaBean> {
@@ -71,9 +65,9 @@ class ViewModel(context: Context, private val navigator: Navigator) : BaseViewMo
                      navigator.failed(e + count)
                  }
 
-             }))*/
+             }))
 //模拟内存泄露
-        Observable.interval(1, TimeUnit.SECONDS)
+        /*Observable.interval(1, TimeUnit.SECONDS)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             //AutoDispose的使用就是这句
@@ -95,7 +89,7 @@ class ViewModel(context: Context, private val navigator: Navigator) : BaseViewMo
                 override fun onComplete() {
 
                 }
-            })
+            })*/
 
 
     }

@@ -7,10 +7,10 @@ import android.databinding.ViewDataBinding;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.constraint.ConstraintLayout;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import com.utils.ViewUtil;
 
@@ -19,30 +19,30 @@ import com.utils.ViewUtil;
  * Created by yangsk
  */
 
-public abstract class BaseConstraintLayout<B extends ViewDataBinding> extends ConstraintLayout {
+public abstract class BaseLinearLayout<B extends ViewDataBinding> extends FrameLayout {
 
     protected B mBinding;
 
-    public BaseConstraintLayout(Context context) {
+    public BaseLinearLayout(Context context) {
         super(context);
 
         initialize(context);
     }
 
-    public BaseConstraintLayout(Context context, @Nullable AttributeSet attrs) {
+
+    public BaseLinearLayout(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
 
         initialize(context, attrs);
     }
 
-    public BaseConstraintLayout(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public BaseLinearLayout(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
         initialize(context, attrs);
     }
 
     private void initialize(Context context) {
-
         initialize(context, null);
     }
 

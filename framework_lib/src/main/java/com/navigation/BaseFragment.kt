@@ -60,7 +60,7 @@ abstract class BaseFragment : Fragment() {
     /**
      * 数据懒加载
      */
-    protected fun lazyLoad() {
+    protected open fun lazyLoad() {
 
     }
 

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+                name="data"
+                type="com.wram.myframeworkdemo.content.ContentBean"/>
+    </data>
+
+    <TextView
+            android:id="@+id/text"
+            android:layout_width="match_parent"
+            android:textSize="@dimen/dp25"
+            android:text="@{data.hint}"
+            android:textColor="@color/c_1d97ff"
+            android:textStyle="bold"
+            android:background="@color/c_ffbe06"
+            android:layout_height="wrap_content"/>
+</layout>

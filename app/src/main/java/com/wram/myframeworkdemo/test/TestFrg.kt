@@ -27,9 +27,8 @@ class TestFrg : BaseCommonFragment<FragmentTestBinding, ViewModel>(), ViewModel.
 
     override fun initGlobalParams() {
         RxBus.get().post("abc", "RxBus")
-        for (i in 0..199) {
-            mViewModel?.getData()
-        }
+
+        mViewModel?.getData()
     }
 
     override fun getLayoutId(): Int {
