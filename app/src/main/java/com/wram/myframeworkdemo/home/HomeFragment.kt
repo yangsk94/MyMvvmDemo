@@ -3,6 +3,8 @@ package com.wram.myframeworkdemo.home
 import com.base.BaseCommonFragment
 import com.navigation.Navigation
 import com.network.bean.UserInfo
+import com.opensource.svgaplayer.SVGAParser
+import com.opensource.svgaplayer.SVGAVideoEntity
 import com.wram.myframeworkdemo.BR
 import com.wram.myframeworkdemo.R
 import com.wram.myframeworkdemo.databinding.FragmentHomeBinding
@@ -34,9 +36,29 @@ class HomeFragment : BaseCommonFragment<FragmentHomeBinding, ViewModel>(), ViewM
         mBinding?.textView?.setOnClickListener {
             Navigation.navigationOpen(context, TestFrg::class.java.name)
         }
+        mBinding?.startButton?.setOnClickListener {
+            mViewModel.svgSource.postValue(mViewModel.randomSample())
+            loadAnimation()
+        }
 
         mViewModel?.login()
 
+    }
+
+    private fun loadAnimation() {
+        val parser = context?.let { SVGAParser(it) }
+        if (parser != null) {
+            parser.decodeFromAssets(mViewModel.svgSource.value.toString(), object : SVGAParser.ParseCompletion {
+                override fun onComplete(videoItem: SVGAVideoEntity) {
+                    mBinding.svgView.setVideoItem(videoItem)
+                    mBinding.svgView.startAnimation()
+                }
+
+                override fun onError() {
+
+                }
+            })
+        }
     }
 
     override fun createViewModel() = context?.let { ViewModel(it, this) }

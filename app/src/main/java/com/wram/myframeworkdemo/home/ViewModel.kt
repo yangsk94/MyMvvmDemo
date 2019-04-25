@@ -11,6 +11,7 @@ import com.network.bean.AreaBean
 import com.network.bean.LoginReqData
 import com.network.bean.UserInfo
 import com.widgets.ToastCompat
+import java.util.*
 
 /**
  * @author
@@ -20,6 +21,7 @@ import com.widgets.ToastCompat
 class ViewModel(context: Context, private val navigator: Navigator) : BaseViewModel(context) {
 
     var data = MutableLiveData<String>()
+    var svgSource = MutableLiveData<String>()
 
     init {
         data.value = "ing"
@@ -50,22 +52,22 @@ class ViewModel(context: Context, private val navigator: Navigator) : BaseViewMo
     var count: Int = 0
 
     fun getData() {
-         ApiClient.instance.getApiService().getAreaList()
-             .compose(RxStreamHelper().mainThread(navigator))
-             .`as`(bindLifecycle())
-             .subscribe(Destiny(object : BaseCallBack<AreaBean> {
-                 override fun success(any: AreaBean) {
-                     count++
-                     context?.let { ToastCompat.showToast(it, any.toString() + count) }
-                 }
+        ApiClient.instance.getApiService().getAreaList()
+            .compose(RxStreamHelper().mainThread(navigator))
+            .`as`(bindLifecycle())
+            .subscribe(Destiny(object : BaseCallBack<AreaBean> {
+                override fun success(any: AreaBean) {
+                    count++
+                    context?.let { ToastCompat.showToast(it, any.toString() + count) }
+                }
 
-                 override fun failed(e: String) {
-                     count++
+                override fun failed(e: String) {
+                    count++
 
-                     navigator.failed(e + count)
-                 }
+                    navigator.failed(e + count)
+                }
 
-             }))
+            }))
 //模拟内存泄露
         /*Observable.interval(1, TimeUnit.SECONDS)
             .subscribeOn(Schedulers.io())
@@ -92,6 +94,24 @@ class ViewModel(context: Context, private val navigator: Navigator) : BaseViewMo
             })*/
 
 
+    }
+
+    val samples = ArrayList<String>()
+
+
+     fun randomSample(): String {
+        if (samples.size == 0) {
+            samples.add("angel.svga")
+            samples.add("alarm.svga")
+            samples.add("EmptyState.svga")
+            samples.add("heartbeat.svga")
+            samples.add("posche.svga")
+            samples.add("rose_1.5.0.svga")
+            samples.add("rose_2.0.0.svga")
+            samples.add("test.svga")
+            samples.add("test2.svga")
+        }
+        return samples.get(Math.floor(Math.random() * samples.size).toInt())
     }
 
 

@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <data >
+    <data>
+
         <import type="android.view.View"/>
+
         <variable
                 name="vm"
                 type="com.wram.myframeworkdemo.home.ViewModel"/>
@@ -10,7 +13,7 @@
 
 
     <LinearLayout
-            android:gravity="bottom"
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -22,6 +25,19 @@
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
+
+        <Button
+                android:id="@+id/startButton"
+                android:text="播放动画"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        <com.opensource.svgaplayer.SVGAImageView
+                android:id="@+id/svgView"
+                android:background="@color/black"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"/>
+
     </LinearLayout>
 
 </layout>

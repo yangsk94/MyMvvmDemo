@@ -109,5 +109,7 @@ dependencies {
     testApi rootProject.ext.tinydancer_noop
 
     api rootProject.ext.autodispose
+
+    api 'com.github.yyued:SVGAPlayer-Android:2.4.3'
 }
 
