@@ -81,6 +81,8 @@ ext {
     tinydancer = 'com.github.brianPlummer:tinydancer:0.1.2'
     tinydancer_noop = 'com.github.brianPlummer:tinydancer-noop:0.1.2'
 
+    autodispose = 'com.uber.autodispose:autodispose-android:1.2.0'
+
 
 }
 

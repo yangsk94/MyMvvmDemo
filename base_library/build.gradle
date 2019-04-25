@@ -107,6 +107,7 @@ dependencies {
     debugApi rootProject.ext.tinydancer
     releaseApi rootProject.ext.tinydancer_noop
     testApi rootProject.ext.tinydancer_noop
-    api 'com.uber.autodispose:autodispose-android:1.2.0'
+
+    api rootProject.ext.autodispose
 }
 
