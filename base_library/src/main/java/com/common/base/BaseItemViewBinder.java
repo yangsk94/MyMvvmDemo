@@ -20,6 +20,8 @@ public abstract class BaseItemViewBinder<D, B extends ViewDataBinding> extends I
     public B mBinding;
     public D item;
     public Context context;
+    public int mAdapterPosition, mLayoutPosition;
+
 
     @NonNull
     @Override
@@ -42,11 +44,12 @@ public abstract class BaseItemViewBinder<D, B extends ViewDataBinding> extends I
     @Override
     protected void onBindViewHolder(@NonNull BaseViewHolder holder, @NonNull D item) {
         this.item = item;
-
         holder.mBinding.setVariable(getVariableId(), item);
         holder.mBinding.executePendingBindings();
 
         setData();
+        mAdapterPosition = holder.getAdapterPosition();
+        mLayoutPosition = holder.getLayoutPosition();
     }
 
     static class BaseViewHolder extends RecyclerView.ViewHolder {

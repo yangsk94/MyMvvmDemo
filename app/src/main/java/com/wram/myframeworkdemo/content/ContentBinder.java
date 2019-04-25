@@ -26,6 +26,10 @@ public class ContentBinder extends BaseItemViewBinder<ContentBean, BinderItemCon
     @Override
     public void setData() {
         super.setData();
-        ImageLoader.INSTANCE.loadImage(mBinding.image,"https:" + item.getHint());
+        if (mLayoutPosition == 10) {
+            ImageLoader.INSTANCE.loadImage(mBinding.image, "https:" + item.getHint(), R.mipmap.car_img);
+            return;
+        }
+        ImageLoader.INSTANCE.loadImage(mBinding.image, "https:" + item.getHint());
     }
 }
