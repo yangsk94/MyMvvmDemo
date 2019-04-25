@@ -1,20 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+
         <import type="android.view.View"/>
+
         <variable
                 name="data"
                 type="com.wram.myframeworkdemo.content.ContentBean"/>
+
+        <variable
+                name="cvm"
+                type="com.wram.myframeworkdemo.content.ContentVM"/>
     </data>
 
-    <TextView
-            android:id="@+id/text"
-            android:layout_width="match_parent"
-            android:textSize="@dimen/dp25"
-            android:text="@{data.hint}"
-            android:textColor="@color/c_1d97ff"
-            android:textStyle="bold"
+    <LinearLayout
             android:background="@color/c_ffbe06"
-            android:layout_height="wrap_content"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <com.widgets.ImageView
+                android:id="@+id/image"
+                android:layout_width="@dimen/dp30"
+                android:layout_height="@dimen/dp30"/>
+
+        <TextView
+                android:layout_width="match_parent"
+                android:textSize="@dimen/dp25"
+                android:text="@{data.hint}"
+                android:textColor="@color/c_1d97ff"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"/>
+    </LinearLayout>
+
 </layout>

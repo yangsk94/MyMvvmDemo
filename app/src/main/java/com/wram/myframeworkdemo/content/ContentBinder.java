@@ -1,16 +1,17 @@
 package com.wram.myframeworkdemo.content;
 
-import android.databinding.ViewDataBinding;
 import com.common.base.BaseItemViewBinder;
+import com.utils.ImageLoader;
 import com.wram.myframeworkdemo.BR;
 import com.wram.myframeworkdemo.R;
+import com.wram.myframeworkdemo.databinding.BinderItemContentBinding;
 
 /**
  * @author ysk
  * @class describe  {@link #}
  * @time 2019/4/25 上午10:26
  */
-public class ContentBinder extends BaseItemViewBinder<ContentBean, ViewDataBinding> {
+public class ContentBinder extends BaseItemViewBinder<ContentBean, BinderItemContentBinding> {
 
     @Override
     public int getLayoutResId() {
@@ -20,5 +21,11 @@ public class ContentBinder extends BaseItemViewBinder<ContentBean, ViewDataBindi
     @Override
     public int getVariableId() {
         return BR.data;
+    }
+
+    @Override
+    public void setData() {
+        super.setData();
+        ImageLoader.INSTANCE.loadImage(mBinding.image,"https:" + item.getHint());
     }
 }

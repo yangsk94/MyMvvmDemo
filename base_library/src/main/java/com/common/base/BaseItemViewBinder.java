@@ -1,5 +1,6 @@
 package com.common.base;
 
+import android.content.Context;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
 import android.support.annotation.LayoutRes;
@@ -16,17 +17,16 @@ import android.view.ViewGroup;
  * @time 2019/4/25 下午12:13
  */
 public abstract class BaseItemViewBinder<D, B extends ViewDataBinding> extends ItemViewBinder<D, BaseItemViewBinder.BaseViewHolder> {
-
+    public B mBinding;
+    public D item;
+    public Context context;
 
     @NonNull
     @Override
     protected BaseViewHolder onCreateViewHolder(@NonNull LayoutInflater inflater, @NonNull ViewGroup parent) {
-
-        B itemBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()),
-                getLayoutResId(), parent, false);
-
-        return new BaseViewHolder(itemBinding.getRoot());
-
+        this.context = parent.getContext();
+        mBinding = DataBindingUtil.inflate(LayoutInflater.from(context), getLayoutResId(), parent, false);
+        return new BaseViewHolder(mBinding.getRoot());
     }
 
     @LayoutRes
@@ -34,10 +34,19 @@ public abstract class BaseItemViewBinder<D, B extends ViewDataBinding> extends I
 
     public abstract int getVariableId();
 
+    public void setData() {
+
+    }
+
+
     @Override
     protected void onBindViewHolder(@NonNull BaseViewHolder holder, @NonNull D item) {
+        this.item = item;
+
         holder.mBinding.setVariable(getVariableId(), item);
         holder.mBinding.executePendingBindings();
+
+        setData();
     }
 
     static class BaseViewHolder extends RecyclerView.ViewHolder {

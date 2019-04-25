@@ -16,6 +16,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.request.target.SimpleTarget
 import com.bumptech.glide.request.transition.Transition
 import com.transformation.GlideRoundTransform
+import com.wram.base_library.R
 
 import java.io.File
 
@@ -56,6 +57,10 @@ object ImageLoader {
 
     fun loadImage(target: ImageView, url: String, @DrawableRes holder: Int) {
         load(target.context, target, url, getDrawable(target, holder))
+    }
+
+    fun loadImage(target: ImageView, url: String) {
+        load(target.context, target, url, getDrawable(target, R.mipmap.default_launcher))
     }
 
     fun loadGrayImage(target: ImageView, url: String, @DrawableRes holder: Int) {

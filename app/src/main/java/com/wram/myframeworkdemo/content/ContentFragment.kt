@@ -6,6 +6,7 @@ import com.base.BaseCommonFragment
 import com.common.RefreshRecyclerView
 import com.event.RxBus
 import com.utils.TaskEngine
+import com.wram.myframeworkdemo.BR
 import com.wram.myframeworkdemo.R
 import com.wram.myframeworkdemo.databinding.FragmentContentBinding
 import io.reactivex.Observable
@@ -64,7 +65,7 @@ class ContentFragment : BaseCommonFragment<FragmentContentBinding, ContentVM>(),
     }
 
     override fun getVariableId(): Int {
-        return 0
+        return BR.cvm
     }
 
     override fun onDestroy() {
