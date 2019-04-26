@@ -4,13 +4,26 @@
     <!--loading-->
     <declare-styleable name="LoadingView">
         <attr name="z_type">
-            <enum name="RotateCircleBuilder" value="11" />
+            <enum name="RotateCircleBuilder" value="11"/>
         </attr>
-        <attr name="z_color" format="color" />
-        <attr name="z_duration_percent" format="float" />
+        <attr name="z_color" format="color"/>
+        <attr name="z_duration_percent" format="float"/>
     </declare-styleable>
+
     <declare-styleable name="LoadingTextView">
-        <attr name="z_text" format="string" />
+        <attr name="z_text" format="string"/>
+    </declare-styleable>
+
+
+    <declare-styleable name="ErrorView">
+        <attr name="hint" format="string"/>
+        <attr name="isShowRefresh" format="boolean"/>
+        <attr name="isShowLoading" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="ErrorProgressView">
+        <attr name="borderWidth" format="dimension" />
+        <attr name="circularColor" format="color|reference" />
     </declare-styleable>
 
 

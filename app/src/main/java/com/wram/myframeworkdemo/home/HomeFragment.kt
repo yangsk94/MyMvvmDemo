@@ -37,7 +37,7 @@ class HomeFragment : BaseCommonFragment<FragmentHomeBinding, ViewModel>(), ViewM
             Navigation.navigationOpen(context, TestFrg::class.java.name)
         }
         mBinding?.startButton?.setOnClickListener {
-            mViewModel.svgSource.postValue(mViewModel.randomSample())
+            mViewModel.svgSource.set(mViewModel.randomSample())
             loadAnimation()
         }
 
@@ -48,7 +48,7 @@ class HomeFragment : BaseCommonFragment<FragmentHomeBinding, ViewModel>(), ViewM
     private fun loadAnimation() {
         val parser = context?.let { SVGAParser(it) }
         if (parser != null) {
-            parser.decodeFromAssets(mViewModel.svgSource.value.toString(), object : SVGAParser.ParseCompletion {
+            parser.decodeFromAssets(mViewModel.svgSource.get().toString(), object : SVGAParser.ParseCompletion {
                 override fun onComplete(videoItem: SVGAVideoEntity) {
                     mBinding.svgView.setVideoItem(videoItem)
                     mBinding.svgView.startAnimation()

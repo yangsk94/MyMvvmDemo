@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+                name="mvm"
+                type="com.wram.myframeworkdemo.me.MeVM"/>
+    </data>
+
+    <FrameLayout
+            android:visibility="@{mvm.isShowRefresh||mvm.isShowLoading?View.VISIBLE:View.GONE}"
+            android:background="@color/white"
+            android:id="@+id/base_refresh_parent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <com.wram.myframeworkdemo.common.ErrorProgressView
+                android:id="@+id/errorProgressView"
+                android:layout_width="@dimen/dp50"
+                android:layout_height="@dimen/dp50"
+                app:circularColor="@color/c_e5e5e5"
+                app:borderWidth="@dimen/dp3v"
+                android:visibility="@{mvm.isShowLoading?View.VISIBLE:View.GONE}"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dp111v"/>
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:gravity="center"
+                android:id="@+id/base_refresh"
+                android:layout_marginTop="@dimen/dp111v"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="@{mvm.isShowRefresh?View.VISIBLE:View.GONE}">
+
+            <com.widgets.ImageView
+                    android:layout_gravity="center"
+                    android:layout_width="@dimen/dp86v"
+                    android:layout_height="@dimen/dp86v"
+                    android:background="@mipmap/ic_nonetwork"/>
+
+            <TextView
+                    android:id="@+id/base_refresh_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp10v"
+                    android:text="@string/common_error_text"
+                    android:textColor="#cccccc"
+                    android:textSize="@dimen/sp13"/>
+
+            <TextView
+                    android:layout_width="@dimen/dp111v"
+                    android:layout_height="@dimen/dp32v"
+                    android:text="刷新"
+                    android:textColor="#49BCF1"
+                    android:textSize="15sp"
+                    android:gravity="center"
+                    android:layout_marginTop="28dp"
+                    android:background="@drawable/shape_nonetwork_refresh"
+                    android:id="@+id/base_refresh_btn"/>
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+</layout>
+
+

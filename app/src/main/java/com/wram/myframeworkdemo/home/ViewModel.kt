@@ -1,7 +1,7 @@
 package com.wram.myframeworkdemo.home
 
-import android.arch.lifecycle.MutableLiveData
 import android.content.Context
+import android.databinding.ObservableField
 import com.medtap.network.library.IOTransFormHelper.RxStreamHelper
 import com.medtap.network.library.ObserverCallBack.BaseCallBack
 import com.medtap.network.library.api.ApiClient
@@ -20,11 +20,11 @@ import java.util.*
  */
 class ViewModel(context: Context, private val navigator: Navigator) : BaseViewModel(context) {
 
-    var data = MutableLiveData<String>()
-    var svgSource = MutableLiveData<String>()
+    var data = ObservableField<String>()
+    var svgSource = ObservableField<String>()
 
     init {
-        data.value = "ing"
+        data.set("ing")
     }
 
     fun login() {
@@ -35,14 +35,14 @@ class ViewModel(context: Context, private val navigator: Navigator) : BaseViewMo
             .`as`(bindLifecycle())
             .subscribe(Destiny(object : BaseCallBack<UserInfo> {
                 override fun success(any: UserInfo) {
-                    data.postValue("success")
+                    data.set("success")
 
                     navigator.success(any)
                 }
 
                 override fun failed(e: String) {
                     context?.let { ToastCompat.showToast(it, "failed") }
-                    data.postValue("failed")
+                    data.set("failed")
                     navigator.failed(e)
                 }
 
@@ -99,7 +99,7 @@ class ViewModel(context: Context, private val navigator: Navigator) : BaseViewMo
     val samples = ArrayList<String>()
 
 
-     fun randomSample(): String {
+    fun randomSample(): String {
         if (samples.size == 0) {
             samples.add("angel.svga")
             samples.add("alarm.svga")

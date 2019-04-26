@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import com.utils.ViewUtil;
 
 /**
  * @author ysk
@@ -17,17 +18,14 @@ import android.view.ViewGroup;
  * @time 2019/4/25 下午12:13
  */
 public abstract class BaseItemViewBinder<D, B extends ViewDataBinding> extends ItemViewBinder<D, BaseItemViewBinder.BaseViewHolder> {
-    public B mBinding;
-    public D item;
-    public Context context;
-    public int mAdapterPosition, mLayoutPosition;
 
+    public Context context;
 
     @NonNull
     @Override
     protected BaseViewHolder onCreateViewHolder(@NonNull LayoutInflater inflater, @NonNull ViewGroup parent) {
         this.context = parent.getContext();
-        mBinding = DataBindingUtil.inflate(LayoutInflater.from(context), getLayoutResId(), parent, false);
+        B mBinding = DataBindingUtil.inflate(LayoutInflater.from(context), getLayoutResId(), parent, false);
         return new BaseViewHolder(mBinding.getRoot());
     }
 
@@ -36,26 +34,27 @@ public abstract class BaseItemViewBinder<D, B extends ViewDataBinding> extends I
 
     public abstract int getVariableId();
 
-    public void setData() {
+    public void setData(int adapterPosition, int layoutPosition, D item, B binding) {
 
     }
-
 
     @Override
     protected void onBindViewHolder(@NonNull BaseViewHolder holder, @NonNull D item) {
-        this.item = item;
-        holder.mBinding.setVariable(getVariableId(), item);
-        holder.mBinding.executePendingBindings();
-
-        setData();
-        mAdapterPosition = holder.getAdapterPosition();
-        mLayoutPosition = holder.getLayoutPosition();
+        try {
+            holder.setData(item, getVariableId());
+            setData(holder.getAdapterPosition(), holder.getLayoutPosition(), item, (B) holder.mBinding);
+        } catch (Throwable e) {
+            if (ViewUtil.Companion.isDebuggable(context)) {
+                throw new RuntimeException(e);
+            } else {
+                e.printStackTrace();
+            }
+        }
     }
 
-    static class BaseViewHolder extends RecyclerView.ViewHolder {
+    static class BaseViewHolder<D, B extends ViewDataBinding> extends RecyclerView.ViewHolder {
 
-        ViewDataBinding mBinding;
-
+        B mBinding;
 
         BaseViewHolder(View itemView) {
             super(itemView);
@@ -63,6 +62,10 @@ public abstract class BaseItemViewBinder<D, B extends ViewDataBinding> extends I
 
         }
 
+        void setData(D d, int variableId) {
+            mBinding.setVariable(variableId, d);
+            mBinding.executePendingBindings();
+        }
     }
 
 }

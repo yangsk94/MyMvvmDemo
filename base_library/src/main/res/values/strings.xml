@@ -9,5 +9,6 @@
     <string name="ptr_let_it_go">放开刷新···</string>
     <string name="ptr_refreshing">正在刷新···</string>
     <string name="ptr_refresh_complete">加载完成···</string>
+    <string name="common_error_text">网络异常，请刷新重试</string>
 
 </resources>

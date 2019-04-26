@@ -1,4 +1,4 @@
-package com.wram.myframeworkdemo.manager
+package com.manager
 
 import android.app.Activity
 import android.app.Dialog
@@ -11,7 +11,6 @@ import android.support.v4.view.ViewCompat
 import android.text.TextUtils
 import android.view.View
 import android.widget.TextView
-import com.navigation.BaseActivity
 import com.utils.Logger
 import com.utils.TextStyleUtil
 import com.utils.ViewUtil
@@ -122,13 +121,13 @@ class PromptManager private constructor() {
         cancelable: Boolean,
         callback: CommonDialogCallback?
     ) {
-        if (context !is BaseActivity) {
-            return
-        }
-
-        if (!context.isOnResume || context.isDestroyed || context.isFinishing) {
-            return
-        }
+//        if (context !is BaseActivity) {
+//            return
+//        }
+//
+//        if (!context.isOnResume || context.isDestroyed || context.isFinishing) {
+//            return
+//        }
         val view = View.inflate(context, R.layout.common_dailog_layout, null)
         val dialog = Dialog(context, R.style.dialog)
         dialog.setCanceledOnTouchOutside(cancelable)

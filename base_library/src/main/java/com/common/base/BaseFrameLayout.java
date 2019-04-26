@@ -53,13 +53,17 @@ public abstract class BaseFrameLayout<B extends ViewDataBinding> extends FrameLa
         if (ViewUtil.Companion.isResourceIdValid(resId)) {
 
             View view = LayoutInflater.from(context).inflate(resId, this);
-            view.setTag("layout/" + getLayoutResIdName() + "_0");
+            if (view != null) {
+                view.setTag("layout/" + getLayoutResIdName() + "_0");
 
-            mBinding = DataBindingUtil.bind(view);
+                mBinding = DataBindingUtil.bind(view);
+
+
+                if (attrs != null) readXmlAttribute(attrs);
+
+                initView();
+            }
         }
-        if (attrs != null) readXmlAttribute(attrs);
-
-        initView();
     }
 
     protected void setLayoutOrientation() {

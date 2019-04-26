@@ -7,22 +7,20 @@ import android.annotation.SuppressLint
 import android.annotation.TargetApi
 import android.app.Activity
 import android.content.Context
+import android.content.pm.ApplicationInfo
+import android.content.pm.PackageManager
 import android.graphics.Rect
 import android.graphics.drawable.Drawable
 import android.os.Build
 import android.support.annotation.FloatRange
-import android.text.InputFilter
 import android.view.View
 import android.view.ViewGroup
-import android.view.Window
 import android.view.WindowManager
 import android.view.animation.Animation
 import android.view.animation.AnimationSet
 import android.view.inputmethod.InputMethodManager
 import android.widget.*
 import com.wram.base_library.R
-
-import java.lang.reflect.Field
 
 
 /**
@@ -328,5 +326,19 @@ class ViewUtil {
         fun getDrawable(context: Context, res: Int): Drawable? {
             return if (res == 0) null else context.resources.getDrawable(res)
         }
+
+        fun isDebuggable(context: Context): Boolean {
+            var debuggable = false
+            val pm = context.packageManager
+            try {
+                val appinfo = pm.getApplicationInfo(context.packageName, 0)
+                debuggable = 0 != appinfo.flags and ApplicationInfo.FLAG_DEBUGGABLE
+            } catch (e: PackageManager.NameNotFoundException) {
+                return debuggable
+            }
+
+            return debuggable
+        }
+
     }
 }

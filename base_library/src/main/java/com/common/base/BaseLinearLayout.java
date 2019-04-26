@@ -66,7 +66,7 @@ public abstract class BaseLinearLayout<B extends ViewDataBinding> extends FrameL
     }
 
 
-    protected void readXmlAttribute(AttributeSet attrs) {
+    public void readXmlAttribute(AttributeSet attrs) {
 
     }
 

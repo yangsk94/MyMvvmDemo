@@ -1,8 +1,8 @@
 package com.wram.myframeworkdemo.content
 
-import android.arch.lifecycle.MutableLiveData
 import android.content.Context
 import android.databinding.BindingAdapter
+import android.databinding.ObservableField
 import android.text.TextUtils
 import android.widget.ImageView
 import com.bumptech.glide.Glide
@@ -18,7 +18,7 @@ import com.wram.myframeworkdemo.R
  */
 class ContentVM(context: Context) : BaseViewModel(context) {
 
-    var data = MutableLiveData<String>()
+    var data = ObservableField<String>()
 
 
     @BindingAdapter("app:imageUrl")
