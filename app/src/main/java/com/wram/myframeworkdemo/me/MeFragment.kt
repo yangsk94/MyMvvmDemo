@@ -1,11 +1,12 @@
 package com.wram.myframeworkdemo.me
 
-import com.base.BaseCommonFragment
 import com.wram.myframeworkdemo.BR
 import com.wram.myframeworkdemo.R
-import com.wram.myframeworkdemo.common.ErrorLayout
+import com.wram.myframeworkdemo.common.base.BaseCommonFragment
+import com.wram.myframeworkdemo.common.widgets.ErrorLayout
 import com.wram.myframeworkdemo.databinding.FragmentMeBinding
 import kotlinx.android.synthetic.main.fragment_me.*
+import kotlinx.android.synthetic.main.fragment_title.*
 
 
 /**
@@ -14,6 +15,7 @@ import kotlinx.android.synthetic.main.fragment_me.*
  * @time 2019/4/20 下午2:58
  */
 class MeFragment : BaseCommonFragment<FragmentMeBinding, MeVM>(), ErrorLayout.ClickRefreshListener {
+
     override fun onClickRefreshListener() {
         mViewModel.isShowRefresh.set(false)
         mViewModel.isShowLoading.set(true)
@@ -30,6 +32,8 @@ class MeFragment : BaseCommonFragment<FragmentMeBinding, MeVM>(), ErrorLayout.Cl
 
         errorLayout.setViewModel(mViewModel)
         errorLayout.setClickRefreshListener(this)
+
+        commonTitleView.setTitleText("我的")
     }
 
     override fun getLayoutId(): Int {

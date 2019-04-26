@@ -1,4 +1,4 @@
-package com.wram.myframeworkdemo.common;
+package com.wram.myframeworkdemo.common.widgets;
 
 import android.animation.Animator;
 import android.animation.ObjectAnimator;

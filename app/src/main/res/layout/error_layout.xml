@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-        <com.wram.myframeworkdemo.common.ErrorProgressView
+        <com.wram.myframeworkdemo.common.widgets.ErrorProgressView
                 android:id="@+id/errorProgressView"
                 android:layout_width="@dimen/dp50"
                 android:layout_height="@dimen/dp50"

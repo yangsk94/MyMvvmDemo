@@ -1,14 +1,15 @@
 package com.wram.myframeworkdemo.home
 
-import com.base.BaseCommonFragment
 import com.navigation.Navigation
 import com.network.bean.UserInfo
 import com.opensource.svgaplayer.SVGAParser
 import com.opensource.svgaplayer.SVGAVideoEntity
 import com.wram.myframeworkdemo.BR
 import com.wram.myframeworkdemo.R
+import com.wram.myframeworkdemo.common.base.BaseCommonFragment
 import com.wram.myframeworkdemo.databinding.FragmentHomeBinding
 import com.wram.myframeworkdemo.test.TestFrg
+import kotlinx.android.synthetic.main.fragment_title.*
 
 /**
  * @author ysk
@@ -42,6 +43,8 @@ class HomeFragment : BaseCommonFragment<FragmentHomeBinding, ViewModel>(), ViewM
         }
 
         mViewModel?.login()
+
+       commonTitleView.setTitleText("主页")
 
     }
 

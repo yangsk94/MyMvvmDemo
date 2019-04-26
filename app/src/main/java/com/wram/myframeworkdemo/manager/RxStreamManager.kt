@@ -4,7 +4,6 @@ import com.medtap.network.library.commen.ApiException
 import com.medtap.network.library.commen.CustomException
 import com.medtap.network.library.errorcode.Error
 import com.network.entity.BaseEntity
-import com.wram.myframeworkdemo.home.ViewModel
 import io.reactivex.Observable
 import io.reactivex.ObservableTransformer
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -15,9 +14,9 @@ import io.reactivex.schedulers.Schedulers
 /**
  * 统一处理，线程调度
  */
-class RxStreamHelper() {
+class RxStreamManager() {
 
-    fun <T> mainThread(navigator: ViewModel.Navigator): ObservableTransformer<BaseEntity<T>, T> {
+    fun <T> mainThread(): ObservableTransformer<BaseEntity<T>, T> {
         return ObservableTransformer { upstream ->
             upstream
                 .subscribeOn(Schedulers.newThread())

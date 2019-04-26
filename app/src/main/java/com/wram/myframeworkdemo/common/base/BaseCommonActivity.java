@@ -1,4 +1,4 @@
-package com.base;
+package com.wram.myframeworkdemo.common.base;
 
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;

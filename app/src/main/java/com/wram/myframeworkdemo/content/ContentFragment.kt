@@ -2,16 +2,17 @@ package com.wram.myframeworkdemo.content
 
 import android.annotation.SuppressLint
 import android.support.v7.widget.LinearLayoutManager
-import com.base.BaseCommonFragment
 import com.common.RefreshRecyclerView
 import com.event.RxBus
 import com.utils.TaskEngine
 import com.wram.myframeworkdemo.BR
 import com.wram.myframeworkdemo.R
+import com.wram.myframeworkdemo.common.base.BaseCommonFragment
 import com.wram.myframeworkdemo.databinding.FragmentContentBinding
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import kotlinx.android.synthetic.main.fragment_content.*
+import kotlinx.android.synthetic.main.fragment_title.*
 import kotlin.concurrent.timerTask
 
 /**
@@ -38,6 +39,7 @@ class ContentFragment : BaseCommonFragment<FragmentContentBinding, ContentVM>(),
 
     @SuppressLint("CheckResult")
     override fun initGlobalParams() {
+        commonTitleView.setTitleText("内容")
         addOb = RxBus.get().register("abc")
         addOb?.observeOn(AndroidSchedulers.mainThread())
             ?.subscribe { s ->

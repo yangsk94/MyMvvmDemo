@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp44">
+
+        <RelativeLayout
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/title_bg_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp44"
+                android:background="@color/c_007aff"
+                tools:ignore="UselessParent">
+
+            <com.widgets.ImageView
+                    android:id="@+id/title_back_icon"
+                    android:visibility="gone"
+                    android:layout_width="@dimen/dp28"
+                    android:layout_height="@dimen/dp28"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp16"
+                    android:src="@mipmap/back_icon"/>
+
+            <TextView
+                    android:id="@+id/title_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/dp60v"
+                    android:layout_marginRight="@dimen/dp60v"
+                    android:orientation="horizontal"
+                    android:textColor="@color/c_282828"
+                    android:textSize="@dimen/dp17v"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    tools:text="我的"/>
+
+            <com.widgets.ImageView
+                    android:id="@+id/title_right_icon"
+                    android:layout_width="@dimen/dp20"
+                    android:layout_height="@dimen/dp20"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/dp16"
+                    android:visibility="gone"
+                    tools:src="@mipmap/ic_launcher"
+                    tools:visibility="visible"/>
+
+            <TextView
+                    android:id="@+id/title_right_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="end"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/dp16"
+                    android:paddingEnd="@dimen/dp16"
+                    android:textColor="@color/c_666666"
+                    android:textSize="@dimen/dp17v"
+                    tools:text="清空"/>
+
+        </RelativeLayout>
+    </FrameLayout>
+</layout>

@@ -1,4 +1,4 @@
-package com.wram.myframeworkdemo.common;
+package com.wram.myframeworkdemo.common.widgets;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -72,15 +72,6 @@ public class ErrorLayout extends BaseFrameLayout<ErrorLayoutBinding> implements 
         mBinding.baseRefreshText.setText(mHint);
     }
 
-
-    public void showError() {
-        isShowRefresh = true;
-        ViewUtil.Companion.updateViewVisibility(mBinding.baseRefreshParent, true);
-        ViewUtil.Companion.updateViewVisibility(mBinding.errorProgressView, false);
-        ViewUtil.Companion.updateViewVisibility(mBinding.baseRefresh, true);
-    }
-
-
     public void showLoading() {
         ViewUtil.Companion.updateViewVisibility(mBinding.baseRefreshParent, true);
         ViewUtil.Companion.updateViewVisibility(mBinding.errorProgressView, true);
@@ -94,7 +85,7 @@ public class ErrorLayout extends BaseFrameLayout<ErrorLayoutBinding> implements 
     @Override
     public void onClick(View view) {
 
-        showLoading();
+        if (listener != null) listener.onClickRefreshListener();
 
     }
 

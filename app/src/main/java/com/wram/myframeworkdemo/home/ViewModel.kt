@@ -2,7 +2,7 @@ package com.wram.myframeworkdemo.home
 
 import android.content.Context
 import android.databinding.ObservableField
-import com.medtap.network.library.IOTransFormHelper.RxStreamHelper
+import com.medtap.network.library.IOTransFormHelper.RxStreamManager
 import com.medtap.network.library.ObserverCallBack.BaseCallBack
 import com.medtap.network.library.api.ApiClient
 import com.medtap.network.library.commen.Destiny
@@ -31,7 +31,7 @@ class ViewModel(context: Context, private val navigator: Navigator) : BaseViewMo
 
         ApiClient.instance.getApiService()
             .login(LoginReqData("18100000001", "123456", 20))
-            .compose(RxStreamHelper().mainThread(navigator))
+            .compose(RxStreamManager().mainThread())
             .`as`(bindLifecycle())
             .subscribe(Destiny(object : BaseCallBack<UserInfo> {
                 override fun success(any: UserInfo) {
@@ -53,7 +53,7 @@ class ViewModel(context: Context, private val navigator: Navigator) : BaseViewMo
 
     fun getData() {
         ApiClient.instance.getApiService().getAreaList()
-            .compose(RxStreamHelper().mainThread(navigator))
+            .compose(RxStreamManager().mainThread())
             .`as`(bindLifecycle())
             .subscribe(Destiny(object : BaseCallBack<AreaBean> {
                 override fun success(any: AreaBean) {
