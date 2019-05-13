@@ -15,7 +15,7 @@ import com.wram.myframeworkdemo.home.ViewModel
  */
 class TestFrg : BaseCommonFragment<FragmentTestBinding, ViewModel>(), ViewModel.Navigator {
 
-    override fun success(info: UserInfo?) {
+    override fun success(info: UserInfo?) {///
 
     }
 
